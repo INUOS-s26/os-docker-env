@@ -53,7 +53,6 @@ to
     export GIT_AUTHOR_EMAIL="you@email.com"
     export GIT_COMMITTER_EMAIL="you@email.com"
 ```
-    4. restart the container
 
 6. Setting up SSH authentication for Github
 
