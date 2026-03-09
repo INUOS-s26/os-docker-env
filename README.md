@@ -33,6 +33,7 @@
     * Mac/Linux: Run `./learncli.sh`.
     * Windows: Run `./learncli.ps1`.
     * When you start the Docker image, Docker will create the `workdir` directory that is bridged between the image and your native operating system, where you can copy and move files between the the two.
+    * Be sure to use `exit` command to finish the session to stop the container.
 
 5. Configuring Git Environment Variable \ 
 To avoid entering `git config --global ...` after each restart you can set your git environmental variable in `.bash_profile`
@@ -54,3 +55,39 @@ to
 ```
     4. restart the container
 
+6. Setting up SSH authentication for Github
+
+* On your local computer
+    1. Navigate to the os-docker-env directory that contains `learncli.sh` file, but do not execute it.
+    2. Type `ssh-keygen`, type `.ssh/id_rsa` as the location to save the key, and press enter for no passphrase at the password prompt.
+```
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/root/.ssh/id_rsa): .ssh/id_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in .ssh/id_rsa.
+Your public key has been saved in .ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:4yheFb7P2rzq/fJ71+AKPssyEQq7+bI0YcnK8+rzfr8 ceclia@topkek
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|                 |
+|        .        |
+|   ... ...       |
+|    =o .S.       |
+| . o...+.o    .  |
+|  + +oo o..  . ..|
+|  .=++. oOo.  o o|
+| .o=*=.oE*@B=+ . |
++----[SHA256]-----+
+```
+    3. Running cat `.ssh/id_rsa.pub` should output the needed key as text to the console, which you should copy for the next part.
+
+
+* On Github
+    1. Click your profile in the top right corner.
+    2. Click Settings -> SSH and GPG keys -> New SSH Key.
+    3. Paste the contents of `.ssh/id_rsa.pub` into the "Key" section.
+    4. Give it a Title and click "Add SSH Key".
