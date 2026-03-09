@@ -1,0 +1,8 @@
+services:
+  osenv:
+    image: ghcr.io/inuos-s26/courseenv:latest
+    working_dir: /mnt/learncli/workdir
+    volumes:
+      - type: bind
+        source: "${WORKDIR:-./}"
+        target: /mnt/learncli
