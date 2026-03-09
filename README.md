@@ -4,6 +4,14 @@
 
 1. Install `docker` for your platform
     * Windows
+        * Install WSL2
+            * Open PowerShell as Administrator
+            * Enter following commands to install WSL2 \
+              `wsl --install`
+              `wsl --set-default-version 2`
+            * Enter following command to allow scripting \
+              `Set-ExecutionPolicy RemoteSigned`
+            * Microsoft's guide for install WSL 2: https://learn.microsoft.com/en-us/windows/wsl/install
         * https://docs.docker.com/docker-for-windows/wsl/
     * Mac
         * https://docs.docker.com/desktop/setup/install/mac-install/
@@ -14,7 +22,7 @@
           You can installing it from Microsoft Store: https://apps.microsoft.com/detail/9n0dx20hk701
         * Check for Git: Open Windows Terminal and type `git --version`.
         * Install Git: If you receive an error, download and install git: https://git-scm.com/downloads
-    * Mac \
+    * Mac
         * Check for Git: Open Terminal and type `git --version`.
         * If Git is not installed, follow the on-screen prompts or try running `xcode-select --install`
 
@@ -45,3 +53,4 @@ to
     export GIT_COMMITTER_EMAIL="you@email.com"
 ```
     4. restart the container
+
