@@ -59,6 +59,8 @@ to
 * On your local computer
     1. Navigate to the os-docker-env directory that contains `learncli.sh` file, but do not execute it.
     2. Type `ssh-keygen`, type `.ssh/id_rsa` as the location to save the key, and press enter for no passphrase at the password prompt.
+    3. Running cat `.ssh/id_rsa.pub` should output the needed key as text to the console, which you should copy for the next part.
+
 ```
 $ ssh-keygen
 Generating public/private rsa key pair.
@@ -82,7 +84,6 @@ The key's randomart image is:
 | .o=*=.oE*@B=+ . |
 +----[SHA256]-----+
 ```
-    3. Running cat `.ssh/id_rsa.pub` should output the needed key as text to the console, which you should copy for the next part.
 
 
 * On Github
